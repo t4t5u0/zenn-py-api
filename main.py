@@ -1,5 +1,4 @@
 import json
-from pprint import pp, pprint
 
 import requests
 
@@ -44,8 +43,4 @@ def main() -> dict:
 
 
 if __name__ == "__main__":
-    result = main()
-
-    from pprint import pprint
-
-    pprint(result)
+    main()
