@@ -4,6 +4,9 @@ version = "0.1.0"
 description = ""
 authors = ["t4t5u0 <ymmtryk0902@gmail.com>"]
 
+[tool.poetry.scripts]
+start = "main:main"
+
 [tool.poetry.dependencies]
 python = "^3.10"
 requests = "^2.27.1"
