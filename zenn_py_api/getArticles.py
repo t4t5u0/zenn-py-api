@@ -1,3 +1,4 @@
+from fastapi import HTTPException
 from bs4 import BeautifulSoup
 from pydantic import BaseModel
 
@@ -21,6 +22,10 @@ def getArticles(user_id: str) -> list:
     # BOOKS = ARTICLES + "?tab=books"
 
     r_article = requests.get(ARTICLES)
+
+    if r_article.status_code != 200:
+        raise HTTPException(r_article.status_code, "Failed to get articles")
+
     soup = BeautifulSoup(r_article.text, "lxml")
 
     article_card = soup.select("article.ArticleCard_container__3qUYt")
