@@ -15,7 +15,7 @@ app.add_middleware(
     allow_headers=["*"]       # 追記により追加
 )
 
-@app.get("/v1/qiita/{user_id}")
+@app.get("/v1/zenn/{user_id}")
 async def get_articles(user_id: str) -> list[Article]:
     return getArticles(user_id)
 
